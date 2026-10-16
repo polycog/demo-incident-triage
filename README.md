@@ -38,7 +38,6 @@ Highlights:
 - [Adapting the policy](#adapting-the-policy)
 - [Project layout](#project-layout)
 - [Development](#development)
-- [Privacy](#privacy)
 - [License](#license)
 
 ## Quick start
@@ -181,13 +180,6 @@ How the guarantees map to the code:
 uv sync
 uv run --group dev pytest       # offline: uses a fake LLM and a scripted console, no API key needed
 ```
-
-## Privacy
-
-Session logs in `reports/` may contain details about students. That folder is listed in
-`.gitignore`, so keep it out of version control and handle it according to your organization's
-data policies. Descriptions you type are sent to whichever LLM you configure. Use the `local`
-profile if text must stay on your machine.
 
 ## License
 
