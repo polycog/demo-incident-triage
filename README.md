@@ -35,7 +35,6 @@ Highlights:
 - [Project layout](#project-layout)
 - [Development](#development)
 - [Privacy](#privacy)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Quick start
@@ -185,12 +184,6 @@ Session logs in `reports/` may contain details about students. That folder is li
 `.gitignore`, so keep it out of version control and handle it according to your organization's
 data policies. Descriptions you type are sent to whichever LLM you configure. Use the `local`
 profile if text must stay on your machine.
-
-## Contributing
-
-Issues and pull requests are welcome at
-[github.com/polycog/demo-incident-triage](https://github.com/polycog/demo-incident-triage).
-Please run the tests before opening a pull request, and include a test with any behavior change.
 
 ## License
 
