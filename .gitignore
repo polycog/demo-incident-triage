@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments (uv)
+.venv/
+venv/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+.env.*
+
+# Generated incident reports (may contain student data)
+reports/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

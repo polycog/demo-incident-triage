@@ -1,0 +1,25 @@
+# Injury triage assistant configuration
+
+reports_dir = "reports"
+
+[llm]
+use = "openai"                       # which profile below ("openai" or "local")
+
+# With base_url set, `model` is sent to that OpenAI-compatible server (e.g. LM Studio).
+[llm.profiles.local]
+model = "openai/gpt-oss-20b"
+base_url = "http://localhost:1234/v1"
+api_key_env = "TRIAGE_LLM_API_KEY"   # local servers don't need a key
+
+# Without base_url, `model` is any pydantic-ai model id; "openai:" reads OPENAI_API_KEY.
+[llm.profiles.openai]
+model = "openai:gpt-4o"
+
+[policy]
+# Values for the [bracketed] placeholders in the policy text
+district_office = "district office"
+district_notice_hours = 1
+tier1_report_hours = 24
+tier2_report_deadline = "end of next school day"
+parent_notice_method = "note / call / app"
+school_day_end = "15:30"             # used to compute "end of next school day"
