@@ -10,6 +10,8 @@ CLI that helps K-12 staff follow a student injury policy in the moment. Staff de
 happened, and it gives them the tier and the next step, then tracks progress as they report it.
 It only tracks the policy. It never contacts anyone or files anything.
 
+**Demo:** [watch the triage assistant guide staff through a student injury](https://drive.google.com/file/d/1LSy0GMOcpanyjX-ScRHjvEYihpc7BRKN/view?usp=drive_link)
+
 - **Neural:** the LLM turns free text into the policy's own terms (a `Tier`, or a yes/no about
   one named step). Its answers are only proposals.
 - **Symbolic:** the policy is encoded as data, and WHEN/THEN operators enforce it at run time.
