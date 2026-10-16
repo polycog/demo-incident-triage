@@ -1,52 +1,104 @@
 # Student injury triage assistant
 
-A small interactive CLI that helps K-12 staff follow a student injury
-policy in the moment. You describe what happened; it tells you the tier
-and the next step, and keeps track as you report progress. It does not
-contact anyone or file anything. It only tracks the policy.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue.svg)
 
-Built with [`polycog-cognition`](https://github.com/polycog/cognition) to show
-a neurosymbolic design: the LLM only *interprets* text, and a declarative
-decision process (plus a human yes/no) decides what happens.
+**A neurosymbolic agent: the LLM interprets, and the symbolic system decides.**
 
-## What the agent does
+A reference demo for [`polycog-cognition`](https://github.com/polycog/cognition): an interactive
+CLI that helps K-12 staff follow a student injury policy in the moment. Staff describe what
+happened, and it gives them the tier and the next step, then tracks progress as they report it.
+It only tracks the policy. It never contacts anyone or files anything.
 
-The agent is **neurosymbolic**: a neural part (the LLM) turns free text into structured guesses,
-and a symbolic part (the policy as data, plus rule-based operators) decides what happens. They meet
-at a narrow interface: the LLM can only answer in the policy's own terms, i.e. a `Tier` or a
-yes/no about one named step, and its answers are proposals until you confirm them.
+- **Neural:** the LLM turns free text into the policy's own terms (a `Tier`, or a yes/no about
+  one named step). Its answers are only proposals.
+- **Symbolic:** the policy is encoded as data, and WHEN/THEN operators enforce it at run time.
+  They decide everything else: which steps the LLM checks, the checklist and deadlines, and the
+  earliest unfinished step to do next.
 
-A session goes like this:
+Highlights:
 
-1. **Describe what happened** *(you)*, in your own words, including anything already done.
-2. **Classify the injury** *(neural)*. The LLM maps your description onto a `Tier`, several times;
-   agreement between the classifications becomes the confidence you see. You confirm its suggestion
-   or pick the tier yourself. **Red** = Tier 1, **yellow** = Tier 2, **green** = Tier 3.
-3. **Check progress** *(neural, scoped symbolically)*. For the description and every later update,
-   the symbolic side picks which steps the LLM should check (only those still pending). The LLM then
-   evaluates, one step at a time, whether the step was reported done or not, using the step's
-   definition from the policy.
-4. **Confirm with you** *(human)*. Each LLM suggestion is put to you as a yes/no question.
-   Only your answers change the record.
-5. **Track and guide** *(symbolic)*. The checklist, deadlines and the **earliest unfinished step**
-   come from the encoded policy and the confirmed record, with no LLM involved, so a skipped step
-   comes back. Steps 3–5 repeat with each update until every step is done or you quit.
+- **Human confirmation:** each LLM proposal is put to staff as a yes/no question, and only their
+  answers change the record.
+- **Deterministic control:** ranked operators, not a scripted flow or an LLM planner, so the
+  same state always leads to the same action.
+- **Works without the LLM:** staff can pick the tier and mark steps themselves.
+- **Policy as data:** tiers, criteria, checklists and deadlines live in one Python file.
+- **Any OpenAI-compatible model,** hosted or local.
 
-Instead of an update you can type a command: `status`, `done <n>`, `undo <n>`, `escalate`, `help`,
-`quit`. When the session ends, a draft log is saved to `reports/` (`.md` and `.json`).
+## Contents
 
-**Who decides what happens next is always deterministic.** The agent is a set of independent WHEN/THEN
-operators, not a scripted flow and not an LLM planner. Each cycle, every operator whose WHEN holds
-is a candidate, and the most urgent one (lowest `Priority` value) runs. Finishing an LLM check comes
-first, then your confirmations, then typed commands, then reading new text, then closing the session
-once everything is done, and finally showing the next step. The same state always leads to the same
-action, and if the LLM is unavailable the agent still works: you pick the tier and mark steps yourself.
+- [Quick start](#quick-start)
+- [Configuration](#configuration)
+- [The built-in policy](#the-built-in-policy)
+- [Adapting the policy](#adapting-the-policy)
+- [Project layout](#project-layout)
+- [Development](#development)
+- [Privacy](#privacy)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Quick start
+
+> [!WARNING]
+> **This is a demonstration, not a medical or safety tool.** The built-in policy is an example
+> and is not endorsed by any school, district or health authority. Do not rely on this software
+> in a real emergency: call your local emergency number and follow your organization's actual
+> procedures. See the [license](LICENSE) for the full warranty disclaimer.
+
+**Requirements:** Python 3.13+, [uv](https://docs.astral.sh/uv/), and either an OpenAI API key
+or a local OpenAI-compatible server.
+
+```bash
+git clone https://github.com/polycog/demo-incident-triage.git
+cd demo-incident-triage
+uv sync
+
+export OPENAI_API_KEY=sk-...              # for the default "openai" profile
+uv run python -m injury_triage            # add --trace to see each decision-process choice
+```
+
+Instead of typing an update, you can type a command:
+
+| Command | Effect |
+|---|---|
+| `status` | Show the checklist and deadlines |
+| `done <n>` / `undo <n>` | Mark step *n* done or not done |
+| `escalate` | Move the incident up a tier |
+| `help` | List the commands |
+| `quit` | End the session and save the log |
+
+When the session ends, a draft log is saved to `reports/` as `.md` and `.json`. Pressing
+Ctrl-C exits without saving.
+
+`escalate` covers a situation that gets worse, such as a nosebleed that won't stop or a head
+injury where the student becomes unresponsive. It only moves up a tier and starts that tier's
+checklist. It also re-reads what you've written so far, so you can confirm again any steps
+already done.
+
+## Configuration
+
+All settings are in [`config.toml`](config.toml).
+
+**Language model.** Choose a profile by setting `use` under `[llm]`:
+
+| Profile | Model | Needs |
+|---|---|---|
+| `openai` (default) | `gpt-4o` | `OPENAI_API_KEY` |
+| `local` | `openai/gpt-oss-20b` | An OpenAI-compatible server at `http://localhost:1234/v1` (such as LM Studio) |
+
+To add your own profile, add a `[llm.profiles.<name>]` table. With `base_url` set, `model` is
+sent to that OpenAI-compatible server, and `api_key_env` names the environment variable holding
+its key. Without `base_url`, `model` is any [pydantic-ai](https://ai.pydantic.dev/) model id.
+
+**Policy placeholders.** The `[policy]` table fills in the `[bracketed]` values in the policy
+text, such as the district office name, reporting deadlines, and when the school day ends.
 
 ## The built-in policy
 
-The agent ships with one triage policy, encoded as data in [`policy.py`](injury_triage/policy.py).
-Each tier has criteria (which the LLM uses to classify a description) and an ordered checklist.
-Values in *italics* are the `[bracketed]` placeholders, set under `[policy]` in `config.toml`.
+The example policy is encoded as data in [`policy.py`](injury_triage/policy.py). Each tier has
+criteria, which the LLM uses to classify a description, and an ordered checklist. Values in
+*italics* are the `[bracketed]` placeholders set under `[policy]` in `config.toml`.
 
 **Tier 1: Emergency** (red): life-threatening or possibly so: unresponsive, trouble breathing,
 severe bleeding, suspected neck or spine injury, seizure, severe allergic reaction, obvious major fracture.
@@ -79,24 +131,22 @@ student returns to class.
 | 2 | Record in nurse visit log. | |
 | 3 | Notify parent same day by *note / call / app*. | end of today |
 
-If unsure between two tiers, the policy says to choose the higher one, and `escalate` moves an
-incident up a tier if things get worse.
+If unsure between two tiers, the policy says to choose the higher one.
 
-## Run
+## Adapting the policy
 
-```bash
-uv sync
-uv run python -m injury_triage            # add --trace to see each decision-process choice
-uv run --group dev pytest                 # offline tests (fake LLM, scripted console)
-```
+To try a different policy, edit [`policy.py`](injury_triage/policy.py):
 
-Settings, including the LLM and the policy's `[bracketed]` placeholders, are in
-[`config.toml`](config.toml). The LLM is chosen from named profiles there:
-`openai` (default) uses `gpt-4o` (needs `OPENAI_API_KEY`), and `local` uses
-`openai/gpt-oss-20b` served by LM Studio at `http://localhost:1234/v1`.
-Switch by setting `use` under `[llm]`.
+- `Tier` holds the tiers and their criteria. The docstrings are part of the LLM prompt, so write
+  them as clear definitions.
+- `StepId` and `PolicyStep` describe each checklist step, and the step's description is what the
+  LLM uses to decide whether it was reported done.
+- `Deadline` and `POLICY` link steps to tiers and set when each one is due.
 
-## How it's built
+Simple values such as names and deadlines can be changed in `config.toml` without touching code.
+Run the tests after changing the policy.
+
+## Project layout
 
 | File | Role |
 |---|---|
@@ -106,16 +156,42 @@ Switch by setting `use` under `[llm]`.
 | [`language.py`](injury_triage/language.py) | The only LLM use: `EnumClassifier` (tier) and `ModelPopulator` (progress, one call per pending step). |
 | [`operators.py`](injury_triage/operators.py) | The decision process: independent WHEN/THEN operators, ranked by `Priority`. |
 | [`agent.py`](injury_triage/agent.py) | The `Cogent`: `now` clock sensor, `console` actuator, operators, ranking. |
+| [`console.py`](injury_triage/console.py) | Terminal I/O and rendering (checklist, next-step panel). |
+| [`reports.py`](injury_triage/reports.py) | Writes the end-of-session draft log. |
+| [`config.py`](injury_triage/config.py) | Loads `config.toml`. |
 
-The guarantees come from the structure:
+How the guarantees map to the code:
 
-- **LLM output is only a proposal.** `ProposeTier` and `CheckStep` store suggestions; `ConfirmAgreedTier`, `ConfirmDisputedTier`,
-  and `ConfirmStepDone` write to the record only after a human yes.
-- **No re-classification.** Progress readings only ask about steps that are still pending.
-  Confirmed facts are never sent back to the LLM.
-- **Deterministic control.** When several operators apply, `sorting_evaluator` picks by `Priority`,
-  so the same state always leads to the same next action.
+- **Proposals vs. record.** `ProposeTier` and `CheckStep` only store suggestions.
+  `ConfirmAgreedTier`, `ConfirmDisputedTier` and `ConfirmStepDone` write to the record after a
+  human yes. The tier is classified several times, and how often the answers agree is the
+  confidence you see.
+- **No re-classification.** Progress checks only ask about pending steps, and confirmed facts
+  are never sent back to the LLM.
+- **Operator order.** Each cycle, `sorting_evaluator` runs the applicable operator with the
+  lowest `Priority`: finish an LLM check, then your confirmations, then typed commands, then
+  read new text, then close the session once everything is done, and finally show the next step.
 
-`escalate` covers a situation that gets worse (a nosebleed that won't stop, a head injury
-where the student becomes unresponsive). It moves to a higher tier only, starts that tier's checklist,
-and re-reads the narrative so steps already done can be confirmed again.
+## Development
+
+```bash
+uv sync
+uv run --group dev pytest       # offline: uses a fake LLM and a scripted console, no API key needed
+```
+
+## Privacy
+
+Session logs in `reports/` may contain details about students. That folder is listed in
+`.gitignore`, so keep it out of version control and handle it according to your organization's
+data policies. Descriptions you type are sent to whichever LLM you configure. Use the `local`
+profile if text must stay on your machine.
+
+## Contributing
+
+Issues and pull requests are welcome at
+[github.com/polycog/demo-incident-triage](https://github.com/polycog/demo-incident-triage).
+Please run the tests before opening a pull request, and include a test with any behavior change.
+
+## License
+
+Released under the [MIT License](LICENSE). Copyright (c) 2026 Polycog Inc.
