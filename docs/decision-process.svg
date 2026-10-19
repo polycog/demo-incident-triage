@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250">
+<title>Injury triage: a conversation, operator by operator</title>
+<rect width="1000" height="1250" fill="#ffffff"/>
+<text x="500.0" y="32" font-size="18" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">Injury triage: what happens in a conversation</text>
+<text x="24" y="74" font-size="10.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.8">INTAKE</text>
+<text x="24" y="88" font-size="10.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">once per session</text>
+<g transform="translate(360.0,56)">
+<rect width="280" height="70" rx="7" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+<path d="M7,0 H273 A7,7 0 0 1 280,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#ddf4ff"/>
+<text x="9" y="13" font-size="9" fill="#0969da" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">ASKS THE USER</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">GatherDescription</text>
+<rect x="249" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="260.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P6</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">“Describe what happened, including</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">anything already done”</text>
+</g>
+<path d="M500,126 L500,154" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="500,154 504,145 496,145" fill="#57606a"/>
+<g transform="translate(360.0,156)">
+<rect width="280" height="70" rx="7" fill="#ffffff" stroke="#7b2fbe" stroke-width="1.4"/>
+<path d="M7,0 H273 A7,7 0 0 1 280,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#f3effa"/>
+<text x="9" y="13" font-size="9" fill="#7b2fbe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">LLM PROPOSES</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ProposeTier</text>
+<rect x="249" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="260.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P4</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">classify the description into a tier,</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">n times; agreement = confidence</text>
+</g>
+<path d="M440,226 L440,246 L210,246 L210,298" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="210,298 214,289 206,289" fill="#57606a"/>
+<text x="222" y="240" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">all readings agree</text>
+<path d="M560,226 L560,246 L790,246 L790,298" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="790,298 794,289 786,289" fill="#57606a"/>
+<text x="778" y="240" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="end">readings split</text>
+<path d="M500,226 L500,298" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="500,298 504,289 496,289" fill="#57606a"/>
+<text x="508" y="272" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">no suggestion</text>
+<text x="508" y="286" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">(undecided or failed)</text>
+<g transform="translate(90.0,300)">
+<rect width="240" height="70" rx="7" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+<path d="M7,0 H233 A7,7 0 0 1 240,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#ddf4ff"/>
+<text x="9" y="13" font-size="9" fill="#0969da" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">ASKS THE USER</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ConfirmAgreedTier</text>
+<rect x="209" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="220.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P2</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">“Treat this as Tier 2?”</text>
+</g>
+<g transform="translate(380.0,300)">
+<rect width="240" height="70" rx="7" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+<path d="M7,0 H233 A7,7 0 0 1 240,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#ddf4ff"/>
+<text x="9" y="13" font-size="9" fill="#0969da" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">ASKS THE USER</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ChooseTier</text>
+<rect x="209" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="220.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P2</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">user picks the tier</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">(higher one if unsure)</text>
+</g>
+<g transform="translate(670.0,300)">
+<rect width="240" height="70" rx="7" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+<path d="M7,0 H233 A7,7 0 0 1 240,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#ddf4ff"/>
+<text x="9" y="13" font-size="9" fill="#0969da" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">ASKS THE USER</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ConfirmDisputedTier</text>
+<rect x="209" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="220.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P2</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">warns the readings disagree,</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">then “Treat this as Tier 2?”</text>
+</g>
+<path d="M330,335 L378,335" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="378,335 369,339 369,331" fill="#57606a"/>
+<text x="354" y="328" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">no</text>
+<path d="M670,335 L622,335" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="622,335 631,331 631,339" fill="#57606a"/>
+<text x="646" y="328" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">no</text>
+<path d="M210,370 L210,479 L348,479" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="348,479 339,483 339,475" fill="#57606a"/>
+<text x="202" y="428" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="end">yes</text>
+<path d="M790,370 L790,479 L652,479" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="652,479 661,475 661,483" fill="#57606a"/>
+<text x="798" y="428" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">yes</text>
+<path d="M500,370 L500,460" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="500,460 504,451 496,451" fill="#57606a"/>
+<rect x="350.0" y="462" width="300" height="34" rx="17.0" fill="#fff8c5" stroke="#d4a72c"/>
+<text x="500" y="483.0" font-size="11.5" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">Tier recorded: its checklist starts</text>
+<line x1="20" y1="540" x2="980" y2="540" stroke="#d0d7de" stroke-dasharray="3 4"/>
+<text x="24" y="562" font-size="10.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.8">CHECKLIST</text>
+<text x="24" y="576" font-size="10.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">every turn, until closed</text>
+<path d="M500,496 L500,558" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="500,558 504,549 496,549" fill="#57606a"/>
+<g transform="translate(355.0,560)">
+<rect width="290" height="70" rx="7" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+<path d="M7,0 H283 A7,7 0 0 1 290,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#ddf4ff"/>
+<text x="9" y="13" font-size="9" fill="#0969da" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">ASKS THE USER</text>
+<rect x="222.2" y="2" width="63.800000000000004" height="14" rx="7" fill="#c47d20"/>
+<text x="254.1" y="12.5" font-size="9.5" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">ends turn</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">AdviseNextStep</text>
+<rect x="259" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="270.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P6</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">shows the checklist and next step,</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">then waits for an update or command</text>
+</g>
+<g transform="translate(120.0,690)">
+<rect width="220" height="70" rx="7" fill="#ffffff" stroke="#c47d20" stroke-width="1.4"/>
+<path d="M7,0 H213 A7,7 0 0 1 220,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#fbf3e6"/>
+<text x="9" y="13" font-size="9" fill="#a0640f" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">SYSTEM</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ReadProgress</text>
+<rect x="189" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="200.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P4</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">queue every pending step</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">to be checked</text>
+</g>
+<g transform="translate(390.0,690)">
+<rect width="220" height="70" rx="7" fill="#ffffff" stroke="#7b2fbe" stroke-width="1.4"/>
+<path d="M7,0 H213 A7,7 0 0 1 220,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#f3effa"/>
+<text x="9" y="13" font-size="9" fill="#7b2fbe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">LLM PROPOSES</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">CheckStep</text>
+<rect x="189" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="200.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P1</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">one per pending step:</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">does the text say it&#x27;s done?</text>
+</g>
+<g transform="translate(660.0,690)">
+<rect width="220" height="70" rx="7" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+<path d="M7,0 H213 A7,7 0 0 1 220,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#ddf4ff"/>
+<text x="9" y="13" font-size="9" fill="#0969da" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">ASKS THE USER</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ConfirmStepDone</text>
+<rect x="189" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="200.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P2</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">yes → step recorded DONE</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">no → suggestion noted</text>
+</g>
+<path d="M355,612 L230,612 L230,688" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="230,688 234,679 226,679" fill="#57606a"/>
+<text x="238" y="656" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">first time, or an update</text>
+<path d="M340,725 L388,725" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="388,725 379,729 379,721" fill="#57606a"/>
+<path d="M610,725 L658,725" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="658,725 649,729 649,721" fill="#57606a"/>
+<text x="634" y="684" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">LLM says done</text>
+<path d="M500,760 L500,808" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="500,808 504,799 496,799" fill="#57606a"/>
+<text x="508" y="790" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">nothing found</text>
+<path d="M770,760 L770,790 L600,790 L600,808" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="600,808 604,799 596,799" fill="#57606a"/>
+<rect x="350.0" y="810" width="300" height="32" rx="16.0" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="500" y="830.0" font-size="11.5" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">Every step done, or quitting?</text>
+<path d="M650,826 L940,826 L940,595 L647,595" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="647,595 656,591 656,599" fill="#57606a"/>
+<text x="660" y="818" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">no: next turn</text>
+<path d="M500,842 L500,880" stroke="#57606a" stroke-width="1.5" fill="none"/>
+<polygon points="500,880 504,871 496,871" fill="#57606a"/>
+<text x="508" y="866" font-size="11" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">yes</text>
+<g transform="translate(390.0,882)">
+<rect width="220" height="70" rx="7" fill="#ffffff" stroke="#c47d20" stroke-width="1.4"/>
+<path d="M7,0 H213 A7,7 0 0 1 220,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#fbf3e6"/>
+<text x="9" y="13" font-size="9" fill="#a0640f" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">SYSTEM</text>
+<rect x="133.6" y="2" width="82.4" height="14" rx="7" fill="#c47d20"/>
+<text x="174.8" y="12.5" font-size="9.5" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">ends session</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">CloseIncident</text>
+<rect x="189" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="200.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P5</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">final checklist; saves</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">the incident log</text>
+</g>
+<rect x="20" y="990" width="960" height="128" rx="10" fill="#f6f8fa"/>
+<text x="36" y="1012" font-size="10.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.8">COMMANDS</text>
+<text x="112" y="1012" font-size="10.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">typed at the Update prompt instead of an update</text>
+<g transform="translate(45.0,1028)">
+<rect width="200" height="70" rx="7" fill="#ffffff" stroke="#8c959f" stroke-width="1.4"/>
+<path d="M7,0 H193 A7,7 0 0 1 200,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#eaeef2"/>
+<text x="9" y="13" font-size="9" fill="#424a53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">TYPED COMMAND</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">ShowStatus</text>
+<rect x="169" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="180.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P3</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">checklist or the</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">command list</text>
+</g>
+<g transform="translate(280.0,1028)">
+<rect width="200" height="70" rx="7" fill="#ffffff" stroke="#8c959f" stroke-width="1.4"/>
+<path d="M7,0 H193 A7,7 0 0 1 200,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#eaeef2"/>
+<text x="9" y="13" font-size="9" fill="#424a53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">TYPED COMMAND</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">SetStepByNumber</text>
+<rect x="169" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="180.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P3</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">mark step n done</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">or not done</text>
+</g>
+<g transform="translate(515.0,1028)">
+<rect width="200" height="70" rx="7" fill="#ffffff" stroke="#8c959f" stroke-width="1.4"/>
+<path d="M7,0 H193 A7,7 0 0 1 200,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#eaeef2"/>
+<text x="9" y="13" font-size="9" fill="#424a53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">TYPED COMMAND</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">EscalateTier</text>
+<rect x="169" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="180.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P3</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">higher tier; narrative</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">re-checked for steps</text>
+</g>
+<g transform="translate(750.0,1028)">
+<rect width="200" height="70" rx="7" fill="#ffffff" stroke="#8c959f" stroke-width="1.4"/>
+<path d="M7,0 H193 A7,7 0 0 1 200,7 V18 H0 V7 A7,7 0 0 1 7,0 z" fill="#eaeef2"/>
+<text x="9" y="13" font-size="9" fill="#424a53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" letter-spacing="0.5">TYPED COMMAND</text>
+<text x="9" y="35" font-size="12" fill="#1f2328" font-family="Menlo, ui-monospace, SFMono-Regular, Consolas, monospace" font-weight="bold">EndSession</text>
+<rect x="169" y="24" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="180.5" y="34.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P3</text>
+<text x="9" y="51" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">asks first if steps</text>
+<text x="9" y="65" font-size="11" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">are still open</text>
+</g>
+<rect x="24" y="1146" width="14" height="14" rx="3" fill="#f3effa" stroke="#7b2fbe"/>
+<text x="44" y="1157.5" font-size="11.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">LLM reads text, only suggests</text>
+<rect x="234.89999999999998" y="1146" width="14" height="14" rx="3" fill="#ddf4ff" stroke="#0969da"/>
+<text x="254.89999999999998" y="1157.5" font-size="11.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">asks the user, who decides</text>
+<rect x="427.5" y="1146" width="14" height="14" rx="3" fill="#eaeef2" stroke="#8c959f"/>
+<text x="447.5" y="1157.5" font-size="11.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">a command the user typed</text>
+<rect x="607.9" y="1146" width="14" height="14" rx="3" fill="#fbf3e6" stroke="#c47d20"/>
+<text x="627.9" y="1157.5" font-size="11.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">no LLM, no question</text>
+<rect x="760.0" y="1146" width="63.800000000000004" height="14" rx="7" fill="#c47d20"/>
+<text x="791.9" y="1156.5" font-size="9.5" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">ends turn</text>
+<text x="829.8" y="1157.5" font-size="11.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">waits for the user</text>
+<rect x="24" y="1170" width="23" height="15" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+<text x="35.5" y="1180.5" font-size="9.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle">P1</text>
+<text x="56" y="1181.5" font-size="11.5" fill="#57606a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">priority: when several operators apply, the lowest number runs first   (P1 read · P2 confirm · P3 command · P4 interpret · P5 close · P6 advise)</text>
+<text x="500.0" y="1218" font-size="12" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">LLM suggestions never reach the incident record directly: each one waits for a human yes or no.</text>
+</svg>
