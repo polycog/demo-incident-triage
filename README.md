@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue.svg)
-[![Built with cognition](https://img.shields.io/badge/built%20with-cognition-7b2fbe?labelColor=f3effa&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIgMCAzNiAzNiIgZmlsbD0ibm9uZSI+PHBvbHlnb24gcG9pbnRzPSIyMCw0IDM0LjMsMTQuNCAyOC44LDMxLjYgMTEuMiwzMS42IDUuNywxNC40IiBzdHJva2U9IiM3YjJmYmUiIHN0cm9rZS13aWR0aD0iMi4yIi8+PGcgc3Ryb2tlPSIjYzQ3ZDIwIiBzdHJva2Utd2lkdGg9IjIiPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iMjAiIHkyPSI0Ii8+PGxpbmUgeDE9IjIwIiB5MT0iMjAiIHgyPSIzNC4zIiB5Mj0iMTQuNCIvPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iMjguOCIgeTI9IjMxLjYiLz48bGluZSB4MT0iMjAiIHkxPSIyMCIgeDI9IjExLjIiIHkyPSIzMS42Ii8+PGxpbmUgeDE9IjIwIiB5MT0iMjAiIHgyPSI1LjciIHkyPSIxNC40Ii8+PC9nPjxnIGZpbGw9IiM3YjJmYmUiPjxjaXJjbGUgY3g9IjIwIiBjeT0iNCIgcj0iMy4yIi8+PGNpcmNsZSBjeD0iMzQuMyIgY3k9IjE0LjQiIHI9IjMuMiIvPjxjaXJjbGUgY3g9IjI4LjgiIGN5PSIzMS42IiByPSIzLjIiLz48Y2lyY2xlIGN4PSIxMS4yIiBjeT0iMzEuNiIgcj0iMy4yIi8+PGNpcmNsZSBjeD0iNS43IiBjeT0iMTQuNCIgcj0iMy4yIi8+PC9nPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjQuNiIgZmlsbD0iI2M0N2QyMCIvPjwvc3ZnPgo=)](https://github.com/polycog/cognition)
+[![Built with cognition](https://img.shields.io/badge/cognition-inside-7b2fbe?labelColor=f3effa&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIgMCAzNiAzNiIgZmlsbD0ibm9uZSI+PHBvbHlnb24gcG9pbnRzPSIyMCw0IDM0LjMsMTQuNCAyOC44LDMxLjYgMTEuMiwzMS42IDUuNywxNC40IiBzdHJva2U9IiM3YjJmYmUiIHN0cm9rZS13aWR0aD0iMi4yIi8+PGcgc3Ryb2tlPSIjYzQ3ZDIwIiBzdHJva2Utd2lkdGg9IjIiPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iMjAiIHkyPSI0Ii8+PGxpbmUgeDE9IjIwIiB5MT0iMjAiIHgyPSIzNC4zIiB5Mj0iMTQuNCIvPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iMjguOCIgeTI9IjMxLjYiLz48bGluZSB4MT0iMjAiIHkxPSIyMCIgeDI9IjExLjIiIHkyPSIzMS42Ii8+PGxpbmUgeDE9IjIwIiB5MT0iMjAiIHgyPSI1LjciIHkyPSIxNC40Ii8+PC9nPjxnIGZpbGw9IiM3YjJmYmUiPjxjaXJjbGUgY3g9IjIwIiBjeT0iNCIgcj0iMy4yIi8+PGNpcmNsZSBjeD0iMzQuMyIgY3k9IjE0LjQiIHI9IjMuMiIvPjxjaXJjbGUgY3g9IjI4LjgiIGN5PSIzMS42IiByPSIzLjIiLz48Y2lyY2xlIGN4PSIxMS4yIiBjeT0iMzEuNiIgcj0iMy4yIi8+PGNpcmNsZSBjeD0iNS43IiBjeT0iMTQuNCIgcj0iMy4yIi8+PC9nPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjQuNiIgZmlsbD0iI2M0N2QyMCIvPjwvc3ZnPgo=)](https://github.com/polycog/cognition)
 [![cognition on PyPI](https://img.shields.io/pypi/v/polycog-cognition?label=cognition%20on%20PyPI&color=c47d20&labelColor=f3effa&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIgMCAzNiAzNiIgZmlsbD0ibm9uZSI+PHBvbHlnb24gcG9pbnRzPSIyMCw0IDM0LjMsMTQuNCAyOC44LDMxLjYgMTEuMiwzMS42IDUuNywxNC40IiBzdHJva2U9IiM3YjJmYmUiIHN0cm9rZS13aWR0aD0iMi4yIi8+PGcgc3Ryb2tlPSIjYzQ3ZDIwIiBzdHJva2Utd2lkdGg9IjIiPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iMjAiIHkyPSI0Ii8+PGxpbmUgeDE9IjIwIiB5MT0iMjAiIHgyPSIzNC4zIiB5Mj0iMTQuNCIvPjxsaW5lIHgxPSIyMCIgeTE9IjIwIiB4Mj0iMjguOCIgeTI9IjMxLjYiLz48bGluZSB4MT0iMjAiIHkxPSIyMCIgeDI9IjExLjIiIHkyPSIzMS42Ii8+PGxpbmUgeDE9IjIwIiB5MT0iMjAiIHgyPSI1LjciIHkyPSIxNC40Ii8+PC9nPjxnIGZpbGw9IiM3YjJmYmUiPjxjaXJjbGUgY3g9IjIwIiBjeT0iNCIgcj0iMy4yIi8+PGNpcmNsZSBjeD0iMzQuMyIgY3k9IjE0LjQiIHI9IjMuMiIvPjxjaXJjbGUgY3g9IjI4LjgiIGN5PSIzMS42IiByPSIzLjIiLz48Y2lyY2xlIGN4PSIxMS4yIiBjeT0iMzEuNiIgcj0iMy4yIi8+PGNpcmNsZSBjeD0iNS43IiBjeT0iMTQuNCIgcj0iMy4yIi8+PC9nPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjQuNiIgZmlsbD0iI2M0N2QyMCIvPjwvc3ZnPgo=)](https://pypi.org/project/polycog-cognition/)
 
 **A neurosymbolic agent: the LLM interprets, and the symbolic system decides.**
@@ -35,8 +35,8 @@ Highlights:
 - [Quick start](#quick-start)
 - [Configuration](#configuration)
 - [The built-in policy](#the-built-in-policy)
+- [The decision process](#the-decision-process)
 - [Adapting the policy](#adapting-the-policy)
-- [Project layout](#project-layout)
 - [Development](#development)
 - [License](#license)
 
@@ -135,6 +135,24 @@ student returns to class.
 
 If unsure between two tiers, the policy says to choose the higher one.
 
+## The decision process
+
+There is no scripted flow. Each cycle, every operator whose WHEN holds is proposed, and the one
+with the lowest priority (P1 to P6 in the diagram) runs. The conversation below is what that
+produces.
+
+![The triage decision process: intake, the checklist phase each turn, and typed commands](docs/decision-process.svg)
+
+- **Intake** (once): the LLM suggests a tier from the description. Staff confirm it, with a
+  warning when the readings disagree, or pick one themselves if the LLM can't decide or they
+  reject the suggestion.
+- **Checklist** (every turn): the next step is shown first. Then the description, and later each
+  update, is checked against the pending steps, and each step the LLM thinks is done is put to
+  staff as "It sounds like step N is done… Correct?". The session closes once every step is done
+  or staff quit.
+- **Commands:** typed at the Update prompt instead of an update, they act directly
+  (`status`, `done <n>`, `escalate`, `quit`).
+
 ## Adapting the policy
 
 To try a different policy, edit [`policy.py`](injury_triage/policy.py):
@@ -147,32 +165,6 @@ To try a different policy, edit [`policy.py`](injury_triage/policy.py):
 
 Simple values such as names and deadlines can be changed in `config.toml` without touching code.
 Run the tests after changing the policy.
-
-## Project layout
-
-| File | Role |
-|---|---|
-| [`policy.py`](injury_triage/policy.py) | The policy as data: `Tier`, `StepId`, `Deadline`, `PolicyStep`, `POLICY`. Docstrings feed the LLM prompts. |
-| [`record.py`](injury_triage/record.py) | `IncidentRecord`: only **confirmed** facts, with a timeline. |
-| [`state.py`](injury_triage/state.py) | Decision-process state: the record plus pending LLM proposals and commands. |
-| [`language.py`](injury_triage/language.py) | The only LLM use: `EnumClassifier` (tier) and `ModelPopulator` (progress, one call per pending step). |
-| [`operators.py`](injury_triage/operators.py) | The decision process: independent WHEN/THEN operators, ranked by `Priority`. |
-| [`agent.py`](injury_triage/agent.py) | The `Cogent`: `now` clock sensor, `console` actuator, operators, ranking. |
-| [`console.py`](injury_triage/console.py) | Terminal I/O and rendering (checklist, next-step panel). |
-| [`reports.py`](injury_triage/reports.py) | Writes the end-of-session draft log. |
-| [`config.py`](injury_triage/config.py) | Loads `config.toml`. |
-
-How the guarantees map to the code:
-
-- **Proposals vs. record.** `ProposeTier` and `CheckStep` only store suggestions.
-  `ConfirmAgreedTier`, `ConfirmDisputedTier` and `ConfirmStepDone` write to the record after a
-  human yes. The tier is classified several times, and how often the answers agree is the
-  confidence you see.
-- **No re-classification.** Progress checks only ask about pending steps, and confirmed facts
-  are never sent back to the LLM.
-- **Operator order.** Each cycle, `sorting_evaluator` runs the applicable operator with the
-  lowest `Priority`: finish an LLM check, then your confirmations, then typed commands, then
-  read new text, then close the session once everything is done, and finally show the next step.
 
 ## Development
 
