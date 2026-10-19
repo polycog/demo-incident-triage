@@ -42,6 +42,7 @@ class ScriptedConsole(Actuator[object, object]):
             return None
         assert isinstance(param, AskText | AskYesNo | AskChoice)
         self.prompts.append(param)
+        self.render.print(f"? {param.prompt if isinstance(param, AskText) else param.question}")  # keep the order
         assert self.answers, f"unexpected prompt: {param}"
         answer = self.answers.popleft()
         return TypedText(answer, T0) if isinstance(param, AskText) else answer
@@ -128,6 +129,13 @@ def test_tier2_with_confirmations(tmp_path):
     )
     rec = state.record
     assert rec.tier is Tier.SIGNIFICANT and rec.closed
+    # the first next step is shown before the description is checked, then input is awaited
+    text = console.text
+    first_next = text.index("NEXT")
+    sounds_like = text.index("? It sounds like step 1 is done")
+    first_update = text.index("? Update")
+    assert first_next < sounds_like < first_update
+    assert text[first_next:sounds_like].count("Step 1: Nurse evaluates") == 1
     assert rec.steps[StepId.NURSE_EVALUATES].source is Source.LLM_CONFIRMED
     assert rec.steps[StepId.INFORM_ADMIN].source is Source.USER  # rejected suggestion, set manually
     # the second reading only asked about steps still pending

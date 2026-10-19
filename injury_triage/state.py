@@ -105,5 +105,12 @@ class TriageState(SelfReinitState):
     closing: bool = False
     """the user asked to end the session"""
 
+    advised: bool = False
+    """the first next step has been shown (progress checks wait until then)"""
+
+    advice_shown_at: int = -1
+    """timeline length when the first advice was shown without waiting for
+    input (so the next step isn't repeated if checking the description changed nothing)"""
+
     shown_at: int = -1
     """timeline length when the checklist was last displayed"""

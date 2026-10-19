@@ -251,7 +251,9 @@ class ChooseTier(TriageOperator):
 
 class ReadProgress(TriageOperator):
     """
-    WHEN: there is narrative text the LLM has not read yet
+    WHEN: there is narrative text the LLM has not read yet, and the
+          first next step has been shown (so the description is
+          checked right after the first advice, not before it)
     THEN: start reading it: queue each still-pending step
           to be checked individually
     """
@@ -259,7 +261,12 @@ class ReadProgress(TriageOperator):
     priority = Priority.INTERPRET
 
     def can_perform(self, state: TriageState, io: IOContainer) -> bool:
-        return state.record.tier is not None and bool(state.unread) and not state.unchecked_steps
+        return (
+            state.record.tier is not None
+            and state.advised
+            and bool(state.unread)
+            and not state.unchecked_steps
+        )
 
     def perform(self, state: TriageState, io: IOContainer) -> None:
         text = "\n".join(state.unread)
@@ -491,7 +498,8 @@ class AdviseNextStep(TriageOperator):
     """
     WHEN: the tier is known (fallback: nothing more urgent applies)
     THEN: show the checklist and the earliest unfinished step,
-          then wait for an update or command
+          then wait for an update or command (the first time, the
+          description is checked against the checklist before waiting)
     """
 
     priority = Priority.ADVISE
@@ -502,10 +510,19 @@ class AdviseNextStep(TriageOperator):
 
     def perform(self, state: TriageState, io: IOContainer) -> None:
         policy = state.policy
-        if state.shown_at != len(state.record.timeline):  # only redraw after a change
+        timeline = len(state.record.timeline)
+        if state.shown_at != timeline:  # only redraw after a change
             say(io, checklist(state.record, policy, now(io)))
-            state.shown_at = len(state.record.timeline)
-        say(io, next_step_panel(state.record, policy, now(io)))
+            state.shown_at = timeline
+        if state.advice_shown_at != timeline:  # not again if nothing changed since the first advice
+            say(io, next_step_panel(state.record, policy, now(io)))
+
+        first = not state.advised
+        state.advised = True
+        if first and state.unread:  # let ReadProgress check the description before waiting for input
+            state.advice_shown_at = timeline
+            return
+        state.advice_shown_at = -1
 
         reply = cast(TypedText, io.o.console(AskText("Update (or 'help')")))
         if not reply.text:
