@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Student injury triage assistant"
+abstract: "CLI assistant for a K-12 student injury triage policy, built on polycog-cognition"
+type: software
+authors:
+  - given-names: Shiwali
+    family-names: Mohan
+  - given-names: Nate
+    family-names: Derbinsky
+  - name: "Polycog, Inc."
+version: 0.1.0
+date-released: 2026-10-23
+license: Apache-2.0
+repository-code: "https://github.com/polycog/demo-incident-triage"
