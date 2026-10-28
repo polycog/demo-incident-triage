@@ -1,15 +1,26 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Student injury triage assistant"
-abstract: "CLI assistant for a K-12 student injury triage policy, built on polycog-cognition"
 type: software
+title: "Student injury triage assistant"
+abstract: >-
+  A neurosymbolic assistant built with the cognition library. It helps K-12 school staff follow a
+  student injury policy in real time: it determines the triage tier, gives the required next step, and
+  tracks the policy's checklist and deadlines.
 authors:
   - given-names: Shiwali
     family-names: Mohan
+    affiliation: "Polycog, Inc."
   - given-names: Nate
     family-names: Derbinsky
+    affiliation: "Polycog, Inc."
   - name: "Polycog, Inc."
 version: 0.1.0
 date-released: 2026-10-23
 license: Apache-2.0
 repository-code: "https://github.com/polycog/demo-incident-triage"
+keywords:
+  - neurosymbolic
+  - conversational agents
+  - incident triage
+  - school safety
+  - polycog cognition
