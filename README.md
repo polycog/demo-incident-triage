@@ -7,7 +7,7 @@
 
 ## 1. Summary
 
-A **neurosymbolic** agent, built with the [`cognition`](https://github.com/polycog/cognition) library, that helps K-12 school staff follow a student injury policy in real time. Staff describe an incident as it happens, and the agent determines the triage tier, gives the required next step, and tracks progress through the policy's checklist and deadlines. It only tracks the policy: it never contacts anyone or files anything, it never makes independent judgments.
+A **neurosymbolic** agent, built with the [`cognition`](https://github.com/polycog/cognition) library, that helps preschool and childcare staff follow a child injury policy in real time. Staff describe an incident as it happens, and the agent determines the triage tier, gives the required next step, and tracks progress through the policy's checklist and deadlines. It only tracks the policy: it never contacts anyone or files anything, it never makes independent judgments.
 
 ### Contents
 
@@ -21,7 +21,7 @@ A **neurosymbolic** agent, built with the [`cognition`](https://github.com/polyc
 
 ## 2. Problem Statement
 
-When a student is hurt, staff must triage the injury, take the right steps in the right order, and meet strict reporting deadlines, often while juggling supervision duties and with the record kept on paper forms and binders. Missed notifications or late reports lead to licensing deficiencies and lost trust with families. Keeping track of these procedural and licensing requirements places a heavy cognitive burden on directors and administrators, whose expertise is better spent supporting staff, improving classroom environments, and mentoring teachers. An agent could interpret staff's own words, recommend a tier and track every deadline, but only if it adheres to the policy without fail: a hallucinated tier or a skipped step could compromise a student's safety.
+When a child is hurt, preschool and childcare staff must triage the injury, take the right steps in the right order, and meet strict licensing deadlines, often while keeping supervision ratios and with the record kept on paper forms and binders. Missed notifications or late reports lead to licensing deficiencies and lost trust with families. Keeping track of these procedural and licensing requirements places a heavy cognitive burden on center directors, whose expertise is better spent supporting staff, improving classroom environments, and mentoring teachers. A checklist app could enforce the policy, but it can't take in a teacher's hurried, in-the-moment description of what happened; an LLM can understand that description, but it can't be trusted to apply the policy, keep the deadlines, or give the same answer twice. A hallucinated tier or a skipped step could compromise a child's safety, so the assistant needs a **neurosymbolic** approach that combines both: language understanding to listen to staff, and exact reasoning to follow the policy.
 
 See [the full problem statement and opportunity](docs/usecase.md).
 
@@ -108,4 +108,4 @@ uv run --group dev pytest
 
 This project is released under the [Apache License 2.0](LICENSE). Copyright © 2026 Polycog, Inc. If you use it, please cite it using the metadata in [`CITATION.cff`](CITATION.cff).
 
-> **Disclaimer:** this project is a technical demonstration of neurosymbolic reasoning. It is not a medical or safety tool, and the built-in policy is an example not endorsed by any school, district or health authority. Do not rely on it in a real emergency: call your local emergency number and follow your organization's actual procedures.
+> **Disclaimer:** this project is a technical demonstration of neurosymbolic reasoning. It is not a medical or safety tool, and the built-in policy is an example not endorsed by any childcare provider, licensing agency or health authority. Do not rely on it in a real emergency: call your local emergency number and follow your organization's actual procedures.
